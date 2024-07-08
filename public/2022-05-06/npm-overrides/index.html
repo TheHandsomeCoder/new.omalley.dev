@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Npm Overrides | O&#39;Malley.dev</title>
+<meta name="keywords" content="">
+<meta name="description" content="Hey! Recently I&rsquo;ve been putting together a small program to track the temperature inside of a hand-me-down fridge. I&rsquo;d planned to use my Nordic Thingy52 as it has all the sensors I need plus its own power source, but unfortunately I found that its NodeJS reference implementation was built with an abandoned Bluetooth Low Energy library which has stopped working with OSX after High Sierra.
+Error: Cannot find module &#39;xpc-connection&#39; Require stack: - /Users/scottomalley/Projects/Nordic-Thingy52-Nodejs/node_modules/noble-device/node_modules/noble/lib/mac/highsierra.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2022-05-06/npm-overrides/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2022-05-06/npm-overrides/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="O&#39;Malley.dev (Alt + H)">O&#39;Malley.dev</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Npm Overrides
+    </h1>
+    <div class="post-meta"><span title='2022-05-06 00:00:00 +0000 UTC'>May 6, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Hey! Recently I&rsquo;ve been putting together a small program to track the temperature inside of a hand-me-down fridge. I&rsquo;d planned to use my <a href="https://www.nordicsemi.com/Products/Development-hardware/Nordic-Thingy-52">Nordic Thingy52</a> as it has all the sensors I need plus its own power source, but unfortunately I found that its NodeJS reference implementation was built with an <a href="https://github.com/noble/noble">abandoned Bluetooth Low Energy library</a> which has stopped working with OSX after High Sierra.</p>
+<pre tabindex="0"><code>Error: Cannot find module &#39;xpc-connection&#39;
+Require stack:
+- /Users/scottomalley/Projects/Nordic-Thingy52-Nodejs/node_modules/noble-device/node_modules/noble/lib/mac/highsierra.js
+- /Users/scottomalley/Projects/Nordic-Thingy52-Nodejs/node_modules/noble-device/node_modules/noble/lib/mac/bindings.js
+- /Users/scottomalley/Projects/Nordic-Thingy52-Nodejs/node_modules/noble-device/node_modules/noble/lib/resolve-bindings.js
+</code></pre><p>Thankfully a few fine folks came together to create <a href="https://abandonware.github.io/">@abandonware</a> and have forked and updated noble, and a quick hack of replacing the existing noble reference with the @abandonware one on the surface seems to resolve my problem, but I don&rsquo;t think this is a particularly elegant solution.</p>
+<h2 id="replacing-a-dependency-of-a-dependency">Replacing a dependency of a dependency<a hidden class="anchor" aria-hidden="true" href="#replacing-a-dependency-of-a-dependency">#</a></h2>
+<p>Digging into the Thingys Node library we can see that it&rsquo;s not actually relying directly on Noble. Instead it uses a small wrapper made by the same author called <code>noble-device</code>. Meaning I can&rsquo;t just replace the noble dependency the way I&rsquo;d done in my quick fix previously.</p>
+<pre tabindex="0"><code>$ npm list --depth 1
+thingy52@1.0.4
+└─┬ noble-device@1.4.1
+ └── noble@1.9.1
+</code></pre><h2 id="npm-overrides">npm overrides<a hidden class="anchor" aria-hidden="true" href="#npm-overrides">#</a></h2>
+<p>npm version 8.3 was released in December 2021 and while it&rsquo;s a minor release it did include a very useful feature &ldquo;overrides&rdquo;.
+<a href="https://docs.npmjs.com/cli/v8/configuring-npm/package-json#overrides">npm overrides</a> as the name describes lets you replace a dependency in your tree. Previously the only way to do nested dependency control was to fork and fix it yourself, so this is a welcome change that brings <code>npm</code> inline with similar features in <a href="https://classic.yarnpkg.com/en/docs/selective-version-resolutions/">yarn</a> and <a href="https://pnpm.io/package_json#pnpmoverrides">pnpm</a>
+Looking at our dependency tree above, if we were to go the forking route we&rsquo;d have to fork <code>noble-device</code> to update its version of noble and either fork <code>thingy52</code> or get a PR opened to the base repo to use our forked version. But with overrides we can add the following to our <code>package.json</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;overrides&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&#34;noble-device&#34;</span>: {
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">&#34;noble&#34;</span>: <span style="color:#e6db74">&#34;npm:@abandonware/noble@1.9.2-15&#34;</span>
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>which will instruct npm to install our override in place of the original dependency.</p>
+<pre tabindex="0"><code>$ npm list --depth 1
+thingy52@1.0.4
+└─┬ noble-device@1.4.1
+ └── noble@npm:@abandonware/noble@1.9.2-15
+</code></pre><p>There are a number of ways you can customise which dependency is replaced and in what situation. You can also be more targeted by specifying only to replace in certain situations. Below we only replace <code>foo</code> if <code>bar</code> is version <code>2.0.0</code></p>
+<pre tabindex="0"><code>&#34;overrides&#34;: {
+   &#34;bar@2.0.0&#34;: {
+     &#34;foo&#34;: &#34;1.0.0&#34;
+   }
+ }
+</code></pre><p>You can also use it to standardise across your project. The below override will make foo always be v1.0.0 regardless of what any dependency requests.</p>
+<pre tabindex="0"><code>{
+ &#34;overrides&#34;: {
+   &#34;foo&#34;: &#34;1.0.0&#34;
+ }
+}
+</code></pre><p>Additionally it&rsquo;s important to note that the overrides only take effect in the top level project. This means if I was to PR the change to the Thingy library, it would only work if I was running the Thingy library itself. To have it take effect in my own project I need to specify it there.</p>
+<p>With the override in place if we run our original example from the Thingy reference library it will successfully execute and start looking for the Thingy</p>
+<pre tabindex="0"><code>node ./examples/environment.js
+Reading Thingy environment sensors!
+</code></pre><p>With that solved I&rsquo;m able to continue with my temp tracking project for the fridge!</p>
+<p>Hopefully this helps anyone who is looking to fix broken dependencies!</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="http://localhost:1313/">O&#39;Malley.dev</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

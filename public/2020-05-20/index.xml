@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>2020-05-20s on O&#39;Malley.dev</title>
+    <link>http://localhost:1313/2020-05-20/</link>
+    <description>Recent content in 2020-05-20s on O&#39;Malley.dev</description>
+    <generator>Hugo -- 0.127.0</generator>
+    <language>en-ie</language>
+    <lastBuildDate>Wed, 20 May 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/2020-05-20/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Repurposing a Nexus 9 to Watch Streams on Discord</title>
+      <link>http://localhost:1313/2020-05-20/repurposing-a-nexus9/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2020-05-20/repurposing-a-nexus9/</guid>
+      <description>Can we reuse old technology for a single purpose</description>
+    </item>
+  </channel>
+</rss>

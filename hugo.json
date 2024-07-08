@@ -1,5 +1,17 @@
 {
-   "baseURL": "https://example.org/",
-   "languageCode": "en-us",
-   "title": "My New Hugo Site"
+   "baseURL": "https://omalley.dev/",
+   "languageCode": "en-ie",
+   "title": "O'Malley.dev",
+   "theme": "PaperMod",
+   "params": {
+      "mainsections": [
+         "posts",
+         "2022-05-06",
+         "2020-05-20"
+      ],
+      "homeInfoParams": {
+         "Title": "Scott O'Malley",
+         "Content": "writes code, loves his dog and is attempting to learn Portuguese. (Spelling mistakes are my own)"
+      }
+   }
 }
