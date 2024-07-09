@@ -4,4 +4,4 @@ TZ = "Europe/Dublin"
 
 [build]
 publish = "public"
-command = "hugo --gc --minify"
+command = "hugo --gc --minify --baseURL ${DEPLOY_URL}"
