@@ -14,7 +14,7 @@
       <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/2022-05-06/npm-overrides/</guid>
       <description>Hey! Recently I&amp;rsquo;ve been putting together a small program to track the temperature inside of a hand-me-down fridge. I&amp;rsquo;d planned to use my Nordic Thingy52 as it has all the sensors I need plus its own power source, but unfortunately I found that its NodeJS reference implementation was built with an abandoned Bluetooth Low Energy library which has stopped working with OSX after High Sierra.
-Error: Cannot find module &amp;#39;xpc-connection&amp;#39; Require stack: - /Users/scottomalley/Projects/Nordic-Thingy52-Nodejs/node_modules/noble-device/node_modules/noble/lib/mac/highsierra.</description>
+Error: Cannot find module &amp;#39;xpc-connection&amp;#39;Require stack:- /Users/scottomalley/Projects/Nordic-Thingy52-Nodejs/node_modules/noble-device/node_modules/noble/lib/mac/highsierra.</description>
     </item>
   </channel>
 </rss>
