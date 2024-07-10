@@ -2,15 +2,23 @@
    "languageCode": "en-ie",
    "title": "O'Malley.dev",
    "theme": "PaperMod",
+   "outputFormats": {
+      "RSS": {
+         "mediatype": "application/rss",
+         "baseName": "rss"
+      }
+   },
    "params": {
       "mainsections": [
          "posts",
          "2022-05-06",
+         "2021-03-25",
          "2020-05-20"
       ],
       "homeInfoParams": {
          "Title": "Scott O'Malley",
          "Content": "writes code, loves his dog and is attempting to learn Portuguese. (Spelling mistakes are my own)"
-      }
+      },
+      "ShowFullTextinRSS": true
    }
 }
