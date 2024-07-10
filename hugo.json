@@ -19,6 +19,7 @@
          "Title": "Scott O'Malley",
          "Content": "writes code, loves his dog and is attempting to learn Portuguese. (Spelling mistakes are my own)"
       },
-      "ShowFullTextinRSS": true
+      "ShowFullTextinRSS": true,
+      "ShowReadingTime": true
    }
 }
