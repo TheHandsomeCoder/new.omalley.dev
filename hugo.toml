@@ -4,7 +4,7 @@ title = "O'Malley.dev"
 theme = "PaperMod"
 
 [outputFormats.RSS]
-mediatype = "application/rss"
+mediaType = "application/rss+xml"
 baseName = "rss"
 
 [params]
