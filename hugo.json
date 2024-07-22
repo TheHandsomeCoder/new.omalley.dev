@@ -21,5 +21,21 @@
       },
       "ShowFullTextinRSS": true,
       "ShowReadingTime": true
+   },
+   "menu": {
+      "main": [
+         {
+            "identifier": "home",
+            "name": "Home",
+            "url": "/",
+            "weight": 10
+         },
+         {
+            "identifier": "articles",
+            "name": "Articles",
+            "url": "/articles/",
+            "weight": 20
+         }
+      ]
    }
 }
