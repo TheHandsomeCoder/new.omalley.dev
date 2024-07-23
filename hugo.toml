@@ -3,7 +3,7 @@ languageCode = "en-ie"
 title = "O'Malley.dev"
 theme = "PaperMod"
 
-[outputFormats.RSS]
+[outputFormats.rss]
 mediaType = "application/rss+xml"
 baseName = "rss"
 
@@ -11,6 +11,11 @@ baseName = "rss"
 mainsections = ["posts", "2022-05-06", "2021-03-25", "2020-05-20"]
 ShowFullTextinRSS = true
 ShowReadingTime = true
+
+[[params.socialIcons]]
+name = "rss"
+url = "/rss.xml"
+
 
 [params.homeInfoParams]
 Title = "Hi! I'm Scott O'Malley"
