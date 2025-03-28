@@ -62,7 +62,7 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 brew install --cask git
 git config --global init.defaultBranch main
 git config --global user.name "scottomalley"
-git config --global user.email scottyomalley@gmail.com
+git config --global user.email <email redacted>
 ```
 * IDEs
 I've been trying zex recently, with the reliable VSCode as a backup.
