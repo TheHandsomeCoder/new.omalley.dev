@@ -5,7 +5,7 @@ date: "2025-03-27T13:14:00+01:00"
 draft: false
 ---
 
-I just upgraded my personal laptop from a 2015 Intel MacBook Pro to an M4 Pro MacBook Pro. I wanted to try keep this new laptop as clean as possible, as you can imagine using the same machine for 10 years means you acrew a lot of files, setups, half started projects and the rest.
+I just upgraded my personal laptop from a 2015 Intel MacBook Pro to an M4 Pro MacBook Pro. I wanted to try keep this new laptop as clean as possible, as you can imagine using the same machine for 10 years means you accrue a lot of files, setups, half started projects and the rest.
 
 The goal of this post is to act as a sort of documentation for myself of the things I have setup on it and where possible the reasoning for it.
 
@@ -42,10 +42,9 @@ brew install --cask iterm2
 ```
 Set global hotkey `CMD + §`, Set theme: Solarized Dark.
 
-Set LS Colours `export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD`, 
+Set LS Colors `export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD`, 
 
 Install [oh-my-zsh](https://ohmyz.sh/#install), 
-
 
 Install and configure [Powerleve10k](https://github.com/romkatv/powerlevel10k)
 
@@ -85,3 +84,5 @@ brew install --cask steam
 brew install --cask telegram
 brew install --cask discord
 ```
+
+This is where I'm leaving it for now. I'll come back to this and add additional details as I make more changes.
